@@ -14,9 +14,13 @@ void draw() {
   drawRect(step);
   step += 0.01;
   float d = dist(x, y, newX, newY);
-  // If d equals 0, this could cause an error.
-  x += (newX - x) / d;
-  y += (newY - y) / d; 
+  if(d != 0) {
+    // If d equals 0, this could cause an error.
+    x += (newX - x) / d;
+    y += (newY - y) / d; 
+  } else {
+    // do nothing
+  }
 }
 
 void drawRect(float theta) {
