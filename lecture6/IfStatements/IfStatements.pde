@@ -12,7 +12,7 @@ float museumTicketPrice(int age) {
 }
 
 void printTicketPrice(String name, int age) {
-  double price = museumTicketPrice(age);
+  float price = museumTicketPrice(age);
   println(name + " must pay $" + price + " to purchase a ticket.");
 }
 

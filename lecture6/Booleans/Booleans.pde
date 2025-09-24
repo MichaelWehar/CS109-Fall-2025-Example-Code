@@ -7,6 +7,7 @@ boolean c = x + 1 > y;
 println("a = " + a);
 println("b = " + b);
 println("c = " + c);
+
 // Testing logical operators
 boolean d = a && b && c;
 boolean e = a && b && !c;
@@ -14,6 +15,7 @@ boolean f = !a || c;
 println("d = " + d);
 println("e = " + e);
 println("f = " + f);
+
 // Testing if statements
 if(c) {
   println("CASE 1");
