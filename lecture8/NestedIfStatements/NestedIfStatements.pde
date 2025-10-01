@@ -10,8 +10,8 @@ boolean isASentence(String s) {
   if(s.length() >= 5) {
     String firstChar = s.substring(0, 1);
     if(firstChar.toUpperCase().equals(firstChar)) {
-      int length = s.length();
-      String lastChar = s.substring(length - 1, length);
+      int len = s.length();
+      String lastChar = s.substring(len - 1, len);
       if(lastChar.equals(".") || lastChar.equals("?") || lastChar.equals("!")) {
         return true;
       } else {
@@ -25,16 +25,27 @@ boolean isASentence(String s) {
   }
 }
 boolean isASentenceAlternative(String s) {
-  // Try it out
-  return false;
+  int len = s.length();
+  if(len >= 5) {
+    String firstChar = s.substring(0, 1);
+    char lastChar = s.charAt(len - 1);
+    // if(firstChar.toUpperCase().equals(firstChar) && (lastChar == '.' || lastChar == '?' || lastChar == '!')) {
+    //   return true;
+    // } else {
+    //   return false;
+    // }
+    return firstChar.toUpperCase().equals(firstChar) && (lastChar == '.' || lastChar == '?' || lastChar == '!');
+  } else {
+    return false; 
+  }
 }
 void setup() {
   String a = "This is a test";
   String b = "What about this?";
   String c = "and could this be!";
   String d = "Hi!";
-  println(isASentence(a));
-  println(isASentence(b));
-  println(isASentence(c));
-  println(isASentence(d));
+  println(isASentenceAlternative(a));
+  println(isASentenceAlternative(b));
+  println(isASentenceAlternative(c));
+  println(isASentenceAlternative(d));
 }
